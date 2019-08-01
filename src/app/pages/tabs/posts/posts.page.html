@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Latest News</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="funnel"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="posts">
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col no-padding>
+          <ion-card [routerLink]="['/', 'start', 'tabs', 'posts', featured.id]">
+            <img [src]="featured?.cover" />
+            <ion-card-header>
+              <ion-card-subtitle>{{featured?.category}}</ion-card-subtitle>
+              <ion-card-title>{{featured?.title}}</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item *ngFor="let post of posts" [routerLink]="['/', 'start', 'tabs', 'posts', post.id]" detail>
+              <ion-thumbnail slot="start">
+                <img [src]="post?.thumbnail">
+              </ion-thumbnail>
+              <ion-label>
+                <h2 [innerHTML]="post?.title"></h2>
+                <p [innerHTML]="post?.category"></p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div *ngIf="!posts">
+    <ion-card>
+      <ion-skeleton-text animated style="width: 100%; height: 120px" slot="start"></ion-skeleton-text>
+      <ion-card-header>
+        <ion-card-subtitle>
+          <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+        </ion-card-subtitle>
+        <ion-card-title>
+          <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item *ngFor="let loop of count">
+              <ion-thumbnail slot="start">
+                <ion-skeleton-text animated></ion-skeleton-text>
+              </ion-thumbnail>
+              <ion-label>
+                <h3>
+                  <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+                </h3>
+                <p>
+                  <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+                </p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>

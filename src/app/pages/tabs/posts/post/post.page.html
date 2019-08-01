@@ -1,0 +1,27 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/start/tabs/posts"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{post.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <div *ngIf="post">
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col no-padding>
+          <img style="width: 100%" [src]="post?.cover" />
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>{{post?.category}}</ion-card-subtitle>
+              <ion-card-title>{{post?.title}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content style="padding-left: 9px; padding-right: 9px;">{{post?.content}}</ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

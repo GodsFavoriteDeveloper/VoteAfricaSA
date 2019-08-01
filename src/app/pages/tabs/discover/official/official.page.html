@@ -1,0 +1,84 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/start/tabs/discover"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{official?.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <div class="twPc-div">
+    <a [style.backgroundImage]="'url('+ official?.cover +')'" class="twPc-bg twPc-block"></a>
+
+    <div>
+      <div class="twPc-button">
+        <ion-button size="small" (click)="favoriteFilm()" *ngIf="!isFavorite" color="success">Follow</ion-button>
+        <ion-button size="small" (click)="unfavoriteFilm()" *ngIf="isFavorite" color="danger">Unfollow</ion-button>
+        <ion-button (click)="share()" color="warning" size="small">Share</ion-button>
+      </div>
+
+      <a title="{{official?.name}}" class="twPc-avatarLink">
+        <img [src]="official?.thumb" class="twPc-avatarImg">
+      </a>
+
+      <div class="twPc-divUser">
+        <div class="twPc-divName">
+          <a>{{official?.name}}</a>
+        </div>
+        <span>
+          <span class="position">{{official?.position}}</span>
+        </span>
+      </div>
+
+      <div class="twPc-divStats">
+        <ul class="twPc-Arrange">
+          <li class="twPc-ArrangeSizeFit">
+            <a>
+              <span class="twPc-StatLabel twPc-block">Political Party</span>
+              <span class="twPc-StatValue">{{official?.party}}</span>
+            </a>
+          </li>
+          <li class="twPc-ArrangeSizeFit">
+            <a>
+              <span class="twPc-StatLabel twPc-block">Promises Made</span>
+              <span class="twPc-StatValue">{{official?.promises.length}}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <ion-card>
+    <ion-list>
+      <ion-item detail (click)="navigate('OfficialInfoPage', official?.background)">
+        <ion-icon name="person" slot="start"></ion-icon>
+        <ion-label>Background</ion-label>
+      </ion-item>
+
+      <ion-item (click)="navigate('OfficialPromisesPage', official?.promises)">
+        <ion-icon name="clipboard" slot="start"></ion-icon>
+        <ion-label>Promises Made</ion-label>
+        <ion-badge color="success" slot="end">{{official?.promises.length}}</ion-badge>
+      </ion-item>
+
+
+      <ion-item detail (click)="navigate('OfficialInfoPage', official?.duties)">
+        <ion-icon (click)="navigate(official?.duties)" name="briefcase" slot="start"></ion-icon>
+        <ion-label>Role & Duties</ion-label>
+      </ion-item>
+
+      <ion-item detail (click)="navigate('ActivityPage', official?.tag)">
+        <ion-icon (click)="navigate(official?.duties)" name="eye" slot="start"></ion-icon>
+        <ion-label>Activity Monitor</ion-label>
+      </ion-item>
+      <ion-item detail href="tel:08080219">
+        <ion-icon name="call" slot="start"></ion-icon>
+        <ion-label>Call My MP</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+</ion-content>
