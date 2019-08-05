@@ -1,4 +1,10 @@
-.swiper-slide img {
+.top-slide img {
+    border-radius: 1px;
+}
+.top-slide .swiper-container {
+    margin-bottom: -5px !important;
+}
+.mid-slide img {
     border-radius: 5px;
 }
 ion-list-header {
@@ -21,4 +27,19 @@ ion-content {
 }
 .whitebg {
     background-color: #fff;
+}
+span.bottomTitle {
+    font-size: 14px;
+    float: left;
+}
+.inner-card {
+    position: absolute;
+    font-size: 14px;
+    left: 0;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    padding: 6px;
+    text-align: left;
+    bottom: 4px;
 }

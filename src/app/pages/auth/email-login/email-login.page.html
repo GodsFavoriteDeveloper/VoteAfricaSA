@@ -8,14 +8,23 @@
 </ion-header>
 
 <ion-content>
-
-  <ion-item>
-    <ion-label position="stacked">Email Address</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="stacked">Password</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <ion-button color="primary" expand="block">Sign In</ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div style="text-align: center">
+          <img style="max-width: 80%; margin-bottom: 45px;" src="assets/img/logo.png" alt="">
+        </div>
+        <ion-item>
+          <ion-label position="stacked">Email Address</ion-label>
+          <ion-input type="email" [(ngModel)]="account.email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Password</ion-label>
+          <ion-input type="password" [(ngModel)]="account.password"></ion-input>
+        </ion-item>
+        <ion-button (click)="signIn()" color="primary" expand="full">Sign In</ion-button>
+        <div style="text-align: center"><ion-text color="dark">Create an account</ion-text></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

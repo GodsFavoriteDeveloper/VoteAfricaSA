@@ -12,18 +12,25 @@
 </ion-header>
 
 <ion-content>
-  <div>
+  <div class="top-slide" *ngIf="officials">
     <div class="whitebg" style="padding: 5px 0 5px 5px">
       <ion-slides [options]="slideOpts2">
         <ion-slide *ngFor="let official of officials" [routerLink]="['/', 'start', 'tabs', 'discover', official.id]">
-          <img src="assets/img/cover.jpg" />
+          <div class="inner-wrap">
+            <img src="assets/img/cover.jpg" />
+            <!--
+            <div class="inner-card">
+              <span>{{official.name}}</span>
+            </div>
+            -->
+          </div>
         </ion-slide>
       </ion-slides>
     </div>
-  </div>
+  </div> <!-- End top big slide -->
 
 
-  <div *ngIf="officials">
+  <div class="mid-slide" *ngIf="officials">
     <ion-list-header mode="ios">
       <ion-label>
         <ion-grid no-padding>
@@ -38,6 +45,7 @@
         </ion-grid>
       </ion-label>
     </ion-list-header>
+
     <div class="whitebg" style="padding: 5px 0 5px 5px">
       <ion-slides [options]="slideOpts">
         <ion-slide *ngFor="let official of officials" [routerLink]="['/', 'start', 'tabs', 'discover', official.id]">
@@ -45,9 +53,9 @@
         </ion-slide>
       </ion-slides>
     </div>
-  </div>
+  </div> <!-- End officials grid-->
 
-  <div>
+  <div class="bottom-slide" *ngIf="officials">
     <ion-list-header mode="ios">
       <ion-label>
         <ion-grid no-padding>
@@ -62,7 +70,9 @@
         </ion-grid>
       </ion-label>
     </ion-list-header>
-  </div>
+    
+  </div> <!-- End bottom slide-->
+
 
   <div *ngIf="!officials">
     <div class="whitebg" style="padding: 5px 0 5px 5px">
@@ -73,5 +83,6 @@
       </ion-slides>
     </div>
   </div>
+  
 
 </ion-content>

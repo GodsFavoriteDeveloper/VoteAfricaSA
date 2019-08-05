@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: 'start',
     loadChildren: () => import('./pages/tabs/tabs.module').then(m => m.TabsPageModule),
-    canLoad: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'auth',
@@ -37,7 +37,7 @@ const routes: Routes = [
   {
     path: 'discover',
     loadChildren: () => import('./pages/tabs/discover/discover.module').then(m => m.DiscoverPageModule),
-    canLoad: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   { path: 'profile',
     loadChildren: './pages/tabs/profile/profile.module#ProfilePageModule'
@@ -50,6 +50,8 @@ const routes: Routes = [
   { path: 'post', loadChildren: './pages/tabs/posts/post/post.module#PostPageModule' },
   { path: 'walkthrough', loadChildren: './pages/walkthrough/walkthrough.module#WalkthroughPageModule' },
   { path: 'officials', loadChildren: './pages/tabs/discover/officials/officials.module#OfficialsPageModule' },
+  { path: 'discuss', loadChildren: './pages/tabs/discuss/discuss.module#DiscussPageModule' },
+  { path: 'register-user', loadChildren: './pages/auth/register/register-user/register-user.module#RegisterUserPageModule' },
 ];
 @NgModule({
   imports: [

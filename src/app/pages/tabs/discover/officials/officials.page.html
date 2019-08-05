@@ -12,5 +12,38 @@
 </ion-header>
 
 <ion-content>
+  <div *ngIf="officials">
+    <ion-list>
+      <ion-item *ngFor="let official of officials" [routerLink]="['/', 'start', 'tabs', 'discover', official.id]" detail>
+        <ion-thumbnail slot="start">
+          <img [src]="official.thumb">
+        </ion-thumbnail>
+        <ion-label>
+          <h2 [innerHTML]="official.name"></h2>
+          <p [innerHTML]="official.position"></p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
 
+
+
+  <!-- Skeleton screen -->
+  <div *ngIf="!officials">
+    <ion-list>
+      <ion-item *ngFor="let loop of count">
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>

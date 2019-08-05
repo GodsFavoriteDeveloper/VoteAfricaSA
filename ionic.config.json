@@ -1,5 +1,7 @@
 {
   "name": "VoteAfricaSA",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

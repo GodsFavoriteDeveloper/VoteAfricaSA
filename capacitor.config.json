@@ -1,0 +1,7 @@
+{
+  "appId": "io.initisolutions.voteafricasa",
+  "appName": "VoteAfricaSA",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

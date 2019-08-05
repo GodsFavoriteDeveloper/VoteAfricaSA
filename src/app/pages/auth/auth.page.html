@@ -1,11 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>auth</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <ion-button expand="full" routerLink="email-login">Go To Login Page</ion-button>
-  <ion-button expand="full" routerLink="register">Go To Register Page</ion-button>
-  <ion-button expand="full" routerLink="reset-password">Reset Password</ion-button>
+  <div class="centerFlex">
+    <div class="inner">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div class="overlay">
+              <div class="logo">
+              <img style="max-width: 100%; margin-bottom: 15px;" src="assets/img/logo.png" alt="">
+            </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <div class="inner_two" style="background-color: #eeeeee">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="full" routerLink="email-login"><ion-icon name="log-in"></ion-icon>&nbsp;&nbsp;&nbsp;Sign In</ion-button>
+            <ion-button expand="full" color="dark" routerLink="register"><ion-icon name="log-out"></ion-icon>&nbsp;&nbsp;&nbsp;Create An Account</ion-button>
+            <ion-button expand="full" color="danger" routerLink="reset-password"><ion-icon name="key"></ion-icon>&nbsp;&nbsp;&nbsp;Reset Password</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
 </ion-content>

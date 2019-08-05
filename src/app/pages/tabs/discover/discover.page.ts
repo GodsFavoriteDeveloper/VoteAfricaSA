@@ -21,9 +21,16 @@ export class DiscoverPage implements OnInit, OnDestroy {
   };
 
   slideOpts2 = {
-    initialSlide: 1,
+    initialSlide: 0,
     speed: 400,
     slidesPerView: 1.1,
+    spaceBetween: 5
+  };
+
+  slideOpts3 = {
+    initialSlide: 1,
+    speed: 400,
+    slidesPerView: 3.1,
     spaceBetween: 5
   };
 

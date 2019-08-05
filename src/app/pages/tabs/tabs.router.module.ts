@@ -46,6 +46,16 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'discuss',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('./discuss/discuss.module').then(m => m.DiscussPageModule)
+          },
+        ]
+      },
+      {
         path: 'profile',
         children: [
           {

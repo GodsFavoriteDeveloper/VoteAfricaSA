@@ -1,0 +1,25 @@
+.centerFlex {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.inner {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    background: url('../../../assets/img/flag_two.jpg');
+    background-size: cover;
+}
+.inner_two {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+}
+.logo {
+    text-align: center;
+}

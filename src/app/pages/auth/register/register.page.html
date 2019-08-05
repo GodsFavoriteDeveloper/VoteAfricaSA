@@ -8,5 +8,24 @@
 </ion-header>
 
 <ion-content>
-
+  <div class="centerFlex">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div style="text-align: center">
+            <img style="max-width: 30%; border-radius: 10px; margin-bottom: 15px;" src="assets/img/icon.png" alt="">
+          </div>
+          <ion-item>
+            <ion-label position="stacked">Email Address</ion-label>
+            <ion-input type="email" [(ngModel)]="account.email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Password</ion-label>
+            <ion-input type="password" [(ngModel)]="account.password"></ion-input>
+          </ion-item>
+          <ion-button (click)="register()" color="primary" expand="full">Sign Up</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>

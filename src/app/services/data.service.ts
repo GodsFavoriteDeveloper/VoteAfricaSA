@@ -4,7 +4,7 @@ import { OfficialsData } from './../mocks/officials';
 import { Officials } from './../models/officials.interface';
 import { Injectable } from '@angular/core';
 import { map, filter, delay, timeout, take, tap } from 'rxjs/operators';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { Storage } from '@ionic/storage';
 const STORAGE_KEY = 'officials';
 
@@ -21,12 +21,21 @@ export class DataService {
   public _isFavorite = new BehaviorSubject(null);
   // tslint:disable-next-line: variable-name
   public _favorites = new BehaviorSubject([]);
+  extras;
 
 
   constructor(public storage: Storage) {
     this.storage.get(STORAGE_KEY).then(data => {
       this._favorites.next(data);
     });
+  }
+
+  public setExtras(data) {
+    this.extras = data;
+  }
+
+  public getExtras() {
+    return this.extras;
   }
 
   // officials logic
